@@ -3,70 +3,79 @@
 @tailwind utilities;
 
 /* Global Styles */
-
 body {
-  @apply bg-gray-50 text-gray-800 font-sans;
+  @apply w-full min-h-[100vh] bg-gray-100 text-gray-900 font-sans;
+}
+
+main {
+  @apply w-full min-h-[50vh] p-4 flex flex-wrap items-center justify-between;
 }
 
 h1 {
-  @apply w-full text-3xl text-center font-bold;
+  @apply w-full text-4xl text-center font-extrabold;
 }
+
 /* Header Styles */
 .header {
-  @apply sticky top-0 bg-white shadow-md z-50;
+  @apply w-full min-h-[15vh] sticky top-0 bg-white shadow-lg z-50;
 }
 
 .nav-container {
-  @apply max-w-7xl mx-auto px-4 py-3 flex justify-between items-center;
+  @apply w-full max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center;
 }
 
 .nav-title {
-  @apply text-2xl font-semibold text-gray-800;
+  @apply text-2xl font-bold text-gray-900;
 }
 
 .nav-links {
-  @apply flex space-x-6 text-gray-800;
+  @apply flex space-x-8 text-gray-900;
 }
 
 .nav-link {
-  @apply hover:text-blue-600;
+  @apply hover:text-blue-700 transition;
 }
 
 /* Main Content Styles */
 .main-content {
-  @apply max-w-4xl mx-auto px-4 py-8;
+  @apply max-w-4xl mx-auto px-6 py-12;
 }
 
 section {
-  @apply w-full p-2 flex items-center justify-between gap-2;
+  @apply w-full p-4 flex flex-wrap items-center justify-between gap-4;
 }
 
 /* Article Styles */
 .article-title {
-  @apply text-3xl font-semibold text-gray-800 mb-4;
+  @apply w-full text-2xl md:text-3xl font-bold text-center text-gray-900 mb-6;
 }
 
 .article-date {
-  @apply text-gray-500 mb-8;
+  @apply text-gray-600 mb-6;
 }
 
 .article-paragraph {
-  @apply text-gray-800 leading-relaxed mb-6;
+  @apply p-4 text-gray-800 leading-relaxed mb-8;
 }
 
 .blockquote {
-  @apply border-l-4 border-blue-600 pl-4 italic text-gray-600 my-4;
+  @apply border-l-4 border-blue-700 pl-6 italic text-gray-700 my-6;
 }
 
 .button-primary {
-  @apply bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition;
+  @apply bg-blue-700 text-white font-bold py-3 px-6 rounded hover:bg-blue-800 transition;
 }
 
 /* Footer Styles */
 .footer {
-  @apply bg-gray-100 py-4;
+  @apply bg-gray-200 py-6;
 }
 
 .footer-content {
-  @apply max-w-4xl mx-auto text-center text-gray-500 text-sm;
+  @apply max-w-4xl mx-auto text-center text-gray-600 text-sm;
+}
+
+/* Debug */
+.debugColor {
+  @apply bg-yellow-500;
 }

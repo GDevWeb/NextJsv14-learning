@@ -1,6 +1,7 @@
 [
   {
     "id": "0",
+    "genre": "women",
     "name": "Christelle",
     "age": 36,
     "hobbies": ["gaming", "mangas", "family", "raclette dinner"],
@@ -11,6 +12,7 @@
   },
   {
     "id": "1",
+    "genre": "women",
     "name": "Oceane",
     "age": 9,
     "hobbies": ["polar", "gaming", "sofa", "chocolate"],
@@ -21,6 +23,7 @@
   },
   {
     "id": "2",
+    "genre": "women",
     "name": "Annabeth",
     "age": 5,
     "hobbies": ["cartoons", "gym", "candy", "sticky my parents"],
@@ -31,6 +34,7 @@
   },
   {
     "id": "3",
+    "genre": "men",
     "name": "Gaetan",
     "age": 39,
     "hobbies": ["coding", "learning", "reading", "marvel", "family"],
