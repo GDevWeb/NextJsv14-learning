@@ -36,6 +36,9 @@ h1 {
   @apply hover:text-blue-700 transition;
 }
 
+main {
+  @apply w-full min-h-[50vh] my-[15vh] flex flex-wrap flex-grow;
+}
 /* Main Content Styles */
 .main-content {
   @apply max-w-4xl mx-auto px-6 py-12;
@@ -67,7 +70,7 @@ section {
 }
 
 /* Footer Styles */
-.footer {
+footer {
   @apply bg-gray-200 py-6;
 }
 

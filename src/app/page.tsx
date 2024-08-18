@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArticlePage } from "./components/ArticlePage";
 
 export default async function Home() {
@@ -18,6 +19,11 @@ export default async function Home() {
         articles={data}
         numberOfArticle={3}
       />
+      <section className="flex items-center justify-end">
+        <button type="button" className="button-primary">
+          <Link href={"/contact"}>Contact us with Link</Link>
+        </button>
+      </section>
     </>
   );
 }

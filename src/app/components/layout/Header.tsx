@@ -1,3 +1,4 @@
+import Nav from "@/app/components/layout/navBar/Nav";
 import Image from "next/image";
 import Link from "next/link";
 import nextJsLogo from "/public/image/nextJs_logo_custom.webp";
@@ -19,6 +20,7 @@ export default function Header() {
           Welcome to My Next.js 14 Site
         </h1>
       </div>
+      <Nav />
     </header>
   );
 }
