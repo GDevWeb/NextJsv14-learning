@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 export default function PageAbout() {
   const router = useRouter();
+
   return (
     <>
       <section className="flex items-center justify-between">

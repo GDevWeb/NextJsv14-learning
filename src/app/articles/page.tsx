@@ -5,14 +5,9 @@ export default async function ArticleDetail() {
   );
   const data = await response.json();
 
-  console.log(data);
-
   return (
     <>
-      <section className="w-full p-2 text-center ">
-        <h1 className="article-title">Article list</h1>
-      </section>
-      <ArticlePage title={"Latest Articles"} articles={data} />
+      <ArticlePage title={"Articles List"} articles={data} />
     </>
   );
 }

@@ -1,8 +1,9 @@
 "use client";
+import Loading from "@/app/components/layout/navBar/Loading";
 import { Article } from "@/app/types/articles";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 export default function ArticleDetail() {
   const { id } = useParams();
@@ -47,31 +48,31 @@ export default function ArticleDetail() {
   }
 
   if (!article) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <section>
         <Link href="/articles" className="button-primary">
-          Retour aux articles
+          Back to articles list
         </Link>
       </section>
       <section className="main-content">
         <article className=" min-h-[50vh] flex items-center justify-between flex-wrap bg-white shadow-lg rounded-lg p-6">
           <header className="w-full mb-6">
-            <h1 className="article-title">{article.title}</h1>
+            <h1 className="article-title">{article?.title}</h1>
           </header>
           <section className="article-paragraph flex items-center justify-between text-center">
-            <p>{article.description}</p>
+            <p>{article?.description}</p>
           </section>
           <footer className="w-full flex items-center justify-between mt-8">
             <p className="article-date">
-              Publié le {new Date(article.createdAt).toLocaleDateString()}
+              Publié le {new Date(article?.createdAt).toLocaleDateString()}
             </p>
-            <p className="article-date"> par {article.author}</p>
+            <p className="article-date"> par {article?.author}</p>
           </footer>
         </article>
       </section>
-    </>
+    </Suspense>
   );
 }

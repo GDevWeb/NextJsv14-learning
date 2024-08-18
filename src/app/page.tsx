@@ -21,7 +21,7 @@ export default async function Home() {
       />
       <section className="flex items-center justify-end">
         <button type="button" className="button-primary">
-          <Link href={"/contact"}>Contact us with Link</Link>
+          <Link href={"/contact"}>Contact us</Link>
         </button>
       </section>
     </>
