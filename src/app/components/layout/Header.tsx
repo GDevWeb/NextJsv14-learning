@@ -17,7 +17,7 @@ export default function Header() {
           />
         </Link>
         <h1 className="text-2xl md:text-3xl font-extrabold text-center">
-          Welcome to My Next.js 14 Site
+          Welcome
         </h1>
       </div>
       <Nav />

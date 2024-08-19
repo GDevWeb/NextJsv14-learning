@@ -1,6 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "@/app/context/AuthContext";
+
+// TypeScript
 interface FormState {
   [key: string]: string;
 }
@@ -15,7 +18,15 @@ const LoginFom = () => {
     email: "",
     password: "",
   });
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
+  const {
+    isAuthenticated,
+    setIsAuthenticated,
+    isAdmin,
+    setIsAdmin,
+    userName,
+    setUserName,
+  } = useContext(AuthContext);
 
   // 2. *** Functions ***
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,6 +78,7 @@ const LoginFom = () => {
       }
 
       const users = await response.json();
+      console.log(users);
 
       if (!users) {
         console.warn("No userData");
@@ -95,11 +107,13 @@ const LoginFom = () => {
       }
 
       setIsAuthenticated(true);
+      setUserName(user.name);
       console.warn("user authenticated");
 
       // conditionally redirection :
       if (user.status === "admin") {
-        router.push("/admin/dashboard");
+        setIsAdmin(true);
+        router.push("/admin");
       } else if (user.status === "member") {
         router.push("/users/dashboard");
       }

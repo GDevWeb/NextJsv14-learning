@@ -1,12 +1,11 @@
 "use client";
+import { AuthContext } from "@/app/context/AuthContext";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import errorImage from "../../public/image/errorPicture/400.webp";
-import { AuthContext } from "./context/AuthContext";
+import errorImageNotAuthorized from "../../../../public/image/errorPicture/notAuthorized.webp";
 
-const Custom400 = () => {
+const NotAuthorized = () => {
   // ***1.State***
   const { isAuthenticated } = useContext(AuthContext);
   const [delay, setDelay] = useState(10);
@@ -41,7 +40,11 @@ const Custom400 = () => {
 
   return (
     <div className="w-full h-full m-auto p-4 flex flex-wrap items-center justify-center ">
-      <Image src={errorImage} alt="error 404 picture" className="rounded" />
+      <Image
+        src={errorImageNotAuthorized}
+        alt="error 404 picture"
+        className="rounded"
+      />
       <div className="w-full p-2 flex items-center gap-2 justify-center">
         {!isAuthenticated ? (
           <p className="w-full text-2xl text-center text-orange-500">
@@ -51,12 +54,7 @@ const Custom400 = () => {
           ""
         )}
       </div>
-      <div className="w-full p-2 flex items-center gap-2 justify-center">
-        <button type="button" className="button-primary">
-          <Link href={"/contact"}>Contact us</Link>
-        </button>
-      </div>
     </div>
   );
 };
-export default Custom400;
+export default NotAuthorized;
