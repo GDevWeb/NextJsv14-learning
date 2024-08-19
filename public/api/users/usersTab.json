@@ -8,7 +8,8 @@
     "email": "christelle@fakemail.com",
     "password": "p@ssword59",
     "userName": "Christelle59",
-    "avatar": "/image/emotions/joy.jpg"
+    "avatar": "/image/emotions/joy.jpg",
+    "status": "member"
   },
   {
     "id": "1",
@@ -19,7 +20,8 @@
     "email": "oceane@fakemail.com",
     "password": "p@ssword59",
     "userName": "Océane59",
-    "avatar": "/image/emotions/ennui.png"
+    "avatar": "/image/emotions/ennui.png",
+    "status": "member"
   },
   {
     "id": "2",
@@ -30,7 +32,8 @@
     "email": "annabeth@fakemail.com",
     "password": "p@ssword59",
     "userName": "Annabeth59",
-    "avatar": "/image/emotions/envy.jpg"
+    "avatar": "/image/emotions/envy.jpg",
+    "status": "member"
   },
   {
     "id": "3",
@@ -38,9 +41,10 @@
     "name": "Gaetan",
     "age": 39,
     "hobbies": ["coding", "learning", "reading", "marvel", "family"],
-    "email": "gaëtan@fakemail.com",
+    "email": "gaetan@fakemail.com",
     "password": "p@ssword59",
     "userName": "Gaëtan59",
-    "avatar": "/image/emotions/anxiety.jpg"
+    "avatar": "/image/emotions/anxiety.jpg",
+    "status": "admin"
   }
 ]
