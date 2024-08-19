@@ -11,13 +11,10 @@ const Navbar = () => {
   return (
     <nav className="w-full p-2">
       <ul className="flex gap-2">
-        <li className="text-lg font-semibold">
-          <Link href="/">Home</Link>
-        </li>
         {isAdmin && (
           <>
             <li className="text-lg font-semibold">
-              <Link href="/admin/dashboard">Admin-Dashboard</Link>
+              <Link href="/admin/dashboard">Dashboard</Link>
             </li>
             <li className="text-lg font-semibold">
               <Link href="/admin/users-list">User-List</Link>

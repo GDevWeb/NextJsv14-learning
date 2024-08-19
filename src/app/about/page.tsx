@@ -5,16 +5,6 @@ export default function PageAbout() {
 
   return (
     <>
-      <section className="flex items-center justify-between">
-        <button
-          type="button"
-          className="button-primary"
-          onClick={() => router.push("/contact")}
-        >
-          Contact us
-        </button>
-      </section>
-
       <section>
         <h1 className="w-full  mb-4 text-3xl font-bold text-center ">
           About us

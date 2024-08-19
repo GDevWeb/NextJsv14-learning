@@ -1,8 +1,11 @@
+"use client";
 import { User } from "@/app/types/users";
 import Image from "next/image";
-import Link from "next/link";
-const UserDashBoard = async ({ params }: { params: { id: string } }) => {
+import { useRouter } from "next/navigation";
+
+const UserDetail = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
+  const router = useRouter();
 
   let user: User | null = null;
 
@@ -21,41 +24,45 @@ const UserDashBoard = async ({ params }: { params: { id: string } }) => {
     if (!user) {
       throw new Error(`User with id ${id} not found !`);
     }
-
-    console.log(data);
   } catch (error) {
     if (error instanceof Error) {
       console.error(error);
       return <p className="text-red-600">Error: {error.message}</p>;
     }
   }
+
   return (
     <>
-      <section>
-        <button type="button" className="button-primary">
-          <Link href={"/"}>Back to home</Link>
+      <section className="mb-6">
+        <button
+          type="button"
+          className="button-primary"
+          onClick={() => router.back()}
+        >
+          Back to users list
         </button>
       </section>
-      <div className="w-full min-h-[50vh] m-auto flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
+      <div className="w-full max-w-2xl mx-auto flex flex-col items-center bg-white p-8 rounded-lg shadow-lg">
         <Image
           src={user?.avatar}
           alt={`Avatar of ${user?.name}`}
           width={150}
           height={150}
-          className="rounded mb-4"
+          className="rounded mb-6"
         />
-        <div className="text-center">
-          <p className="text-2xl font-semibold mb-2">Username: {user?.name}</p>
-          <p className="font-semibold text-gray-600">
-            Age: <span className="font-normal">{user?.age}</span> old{" "}
-            {user?.age > 1 ? "years" : "year"}
+        <div className="text-center space-y-4">
+          <p className="text-2xl font-semibold">Username: {user?.name}</p>
+          <p className="text-gray-600">
+            <span className="font-semibold">Age:</span>{" "}
+            <span className="font-normal">{user?.age}</span> years old
           </p>
-          <p className="font-semibold text-gray-600">
-            Hobbies:{" "}
+          <p className="text-gray-600">
+            <span className="font-semibold">Hobbies:</span>{" "}
             <span className="font-normal">{user?.hobbies.join(", ")}</span>
           </p>
-          <p className="font-semibold text-gray-600">
-            Email: <span className="font-normal">{user?.email}</span>
+          <p className="text-gray-600">
+            <span className="font-semibold">Email:</span>{" "}
+            <span className="font-normal">{user?.email}</span>
           </p>
         </div>
       </div>
@@ -63,4 +70,4 @@ const UserDashBoard = async ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default UserDashBoard;
+export default UserDetail;

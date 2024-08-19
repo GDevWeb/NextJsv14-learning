@@ -1,20 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { User } from "../types/users";
+import { User } from "../../types/users";
 
-interface DashBoardClientComponentProps {
+interface UsersListComponentProps {
   userData: User[];
 }
 
-export const DashBoardClientComponent: React.FC<
-  DashBoardClientComponentProps
-> = ({ userData }) => {
+export const UsersListComponent: React.FC<UsersListComponentProps> = ({
+  userData,
+}) => {
   if (!userData) {
     return <h1 className="text-red-600">No user data found!</h1>;
   }
 
   const renderUsers = userData.map((user) => (
-    <Link href={`dashboard/${user.id}`} key={user.id}>
+    <Link href={`users-list/${user.id}`} key={user.id}>
       <div
         id="card"
         className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg"
@@ -57,4 +57,4 @@ export const DashBoardClientComponent: React.FC<
   );
 };
 
-export default DashBoardClientComponent;
+export default UsersListComponent;

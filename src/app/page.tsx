@@ -19,11 +19,6 @@ export default async function Home() {
         articles={data}
         numberOfArticle={3}
       />
-      <section className="flex items-center justify-end">
-        <button type="button" className="button-primary">
-          <Link href={"/contact"}>Contact us</Link>
-        </button>
-      </section>
     </>
   );
 }

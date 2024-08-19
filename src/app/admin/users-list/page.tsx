@@ -1,4 +1,4 @@
-import { DashBoardClientComponent } from "@/app/components/DashBoardClientComponent";
+import UsersListComponent from "./UsersListComponent";
 
 export const UsersList = async () => {
   let data;
@@ -12,7 +12,7 @@ export const UsersList = async () => {
     }
 
     data = await response.json();
-    console.log(data);
+    // console.log(data);
   } catch (error) {
     console.error(error);
     data = [];
@@ -22,7 +22,7 @@ export const UsersList = async () => {
   // 3.***Render***
   return (
     <>
-      <DashBoardClientComponent userData={data} />
+      <UsersListComponent userData={data} />
     </>
   );
 };
