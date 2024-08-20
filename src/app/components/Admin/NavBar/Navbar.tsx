@@ -9,8 +9,8 @@ const Navbar = () => {
   const { isAdmin } = useContext(AuthContext);
 
   return (
-    <nav className="w-full p-2">
-      <ul className="flex gap-2">
+    <nav className="w-full p-2 flex items-center justify-between">
+      <ul className="w-full p-2 flex items-center gap-2">
         {isAdmin && (
           <>
             <li className="text-lg font-semibold">

@@ -113,7 +113,7 @@ const LoginFom = () => {
       // conditionally redirection :
       if (user.status === "admin") {
         setIsAdmin(true);
-        router.push("/admin");
+        router.push("/admin/dashboard");
       } else if (user.status === "member") {
         router.push("/users/dashboard");
       }
