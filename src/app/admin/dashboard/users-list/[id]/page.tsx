@@ -1,11 +1,8 @@
-"use client";
 import { User } from "@/app/types/users";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 const UserDetail = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
-  const router = useRouter();
 
   let user: User | null = null;
 
@@ -30,7 +27,6 @@ const UserDetail = async ({ params }: { params: { id: string } }) => {
       return <p className="text-red-600">Error: {error.message}</p>;
     }
   }
-
   return (
     <>
       <section className="mb-6">

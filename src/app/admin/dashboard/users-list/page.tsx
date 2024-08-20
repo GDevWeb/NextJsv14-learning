@@ -1,6 +1,11 @@
+"use client";
+import NotAuthorized from "@/app/components/errorPages/notAuthorized";
+import { AuthContext } from "@/app/context/AuthContext";
+import { useContext } from "react";
 import UsersListComponent from "./UsersListComponent";
 
 export const UsersList = async () => {
+  const { isAdmin } = useContext(AuthContext);
   let data;
   try {
     const response = await fetch(
@@ -19,6 +24,10 @@ export const UsersList = async () => {
   }
   // 1.***State***
   // 2.***Functions***
+
+  if (!isAdmin) {
+    return <NotAuthorized />;
+  }
   // 3.***Render***
   return (
     <>

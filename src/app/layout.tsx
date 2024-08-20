@@ -20,7 +20,9 @@ export default function RootLayout({
         <AuthProvider>
           <Header />
           <div className="flex">
-            <main>{children}</main>
+            <main className="w-full flex items-start justify-between flex-grow">
+              {children}
+            </main>
           </div>
           <Footer />
         </AuthProvider>

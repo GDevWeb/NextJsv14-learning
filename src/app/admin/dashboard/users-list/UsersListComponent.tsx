@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { User } from "../../types/users";
+import { User } from "../../../types/users";
 
 interface UsersListComponentProps {
   userData: User[];
