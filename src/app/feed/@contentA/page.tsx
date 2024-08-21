@@ -6,7 +6,7 @@ const PageContentA = async () => {
     <div>
       <section>
         <article>
-          <h1>Title article content A</h1>
+          <h1>Title content A</h1>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero,
             culpa minus. Incidunt possimus inventore laboriosam? Autem sit est

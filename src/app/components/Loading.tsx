@@ -9,8 +9,7 @@ const Loading = () => {
           width="200"
           height="200"
           xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          xmlnsSvgjs="http://svgjs.dev/svgjs"
+          xmlnsXlink="http://www.w3.org/1999/xlink" // C'est un attribut correct pour SVG, donc on le conserve
         >
           {/* <!-- Robot Body --> */}
           <circle cx="100" cy="100" r="50" fill="#c3c3c3" />

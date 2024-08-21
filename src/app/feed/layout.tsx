@@ -27,7 +27,7 @@ export default function FeedLayout({
     <main>
       {children}
       {contentA}
-      {photo}
+      {photo} {/* overlay */}
       {contentB}
     </main>
   );

@@ -5,6 +5,9 @@ const navLinks = [
   { href: "/services", linkName: "Services" },
   { href: "/contact", linkName: "Contact" },
   { href: "/login", linkName: "Login" },
+  { href: "/feed", linkName: "Feed" },
+  { href: "/servicesMore", linkName: "ServicesMore" },
+  { href: "/another", linkName: "Another" },
 ];
 
 export default navLinks;
