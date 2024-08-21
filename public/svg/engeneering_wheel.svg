@@ -1,0 +1,47 @@
+<svg
+  width="200"
+  height="200"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:svgjs="http://svgjs.dev/svgjs"
+>
+  <!-- Gear -->
+  <circle cx="100" cy="100" r="40" fill="#888" />
+  
+  <!-- Teeth -->
+  <path
+    d="M100,60 L110,40 L130,40 L120,60 Z"
+    fill="#666"
+  />
+  <path
+    d="M100,140 L110,160 L130,160 L120,140 Z"
+    fill="#666"
+  />
+  <path
+    d="M60,100 L40,110 L40,130 L60,120 Z"
+    fill="#666"
+  />
+  <path
+    d="M140,100 L160,110 L160,130 L140,120 Z"
+    fill="#666"
+  />
+
+  <!-- Rotation Animation -->
+  <circle
+    cx="100"
+    cy="100"
+    r="40"
+    fill="none"
+    stroke="#444"
+    stroke-width="10"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 100 100"
+      to="360 100 100"
+      dur="5s"
+      repeatCount="indefinite"
+    />
+  </circle>
+</svg>

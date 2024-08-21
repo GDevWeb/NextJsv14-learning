@@ -4,15 +4,24 @@
 import NotAuthorized from "@/app/components/errorPages/notAuthorized";
 import { AuthContext } from "@/app/context/AuthContext";
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const DashBoard = () => {
   const { isAdmin } = useContext(AuthContext);
 
+  useEffect(() => {
+    const alertRework = setTimeout(() => {
+      alert(
+        `Refacto de la section admin/dashboard - Voir chapitre 2 - parallels routes et la route du projet`
+      );
+    }, 5000);
+
+    return () => clearTimeout(alertRework);
+  }, []);
+
   if (!isAdmin) {
     return <NotAuthorized />;
   }
-
   return (
     <>
       <div

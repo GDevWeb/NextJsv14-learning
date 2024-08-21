@@ -1,0 +1,37 @@
+<svg
+  width="200"
+  height="200"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:svgjs="http://svgjs.dev/svgjs"
+>
+  <!-- Base -->
+  <rect x="90" y="150" width="20" height="30" fill="#666" />
+
+  <!-- Arm -->
+  <rect x="95" y="50" width="10" height="100" fill="#888" />
+
+  <!-- Joint -->
+  <circle cx="100" cy="50" r="10" fill="#444" />
+
+  <!-- Claw -->
+  <path d="M95,20 L105,20 L110,40 L90,40 Z" fill="#999" />
+  
+  <!-- Claw Movement -->
+  <path
+    d="M95,20 L105,20 L110,40 L90,40 Z"
+    fill="none"
+    stroke="#555"
+    stroke-width="2"
+  >
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 100 50"
+      to="-20 100 50"
+      dur="1s"
+      repeatCount="indefinite"
+      fill="freeze"
+    />
+  </path>
+</svg>
