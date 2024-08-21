@@ -1,3 +1,4 @@
+// src/app/feed/page
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +15,7 @@ const photos: PhotosTabProps[] = [
 ];
 const FeedPage = () => {
   const renderPhoto = photos.map((photo) => (
-    <Link href={`/feed/photo/${photo.id}`} key={photo.id}>
+    <Link href={`/feed/${photo.id}`} key={photo.id}>
       <Image
         src={photo.src}
         width={200}
