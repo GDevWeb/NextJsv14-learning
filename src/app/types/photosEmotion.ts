@@ -1,4 +1,4 @@
-export default interface PhotosTabTypes {
+export interface PhotosEmotionsTabType {
   id: number;
   src: string;
   title: string;

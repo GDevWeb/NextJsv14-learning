@@ -1,10 +1,6 @@
-interface PhotosTabProps {
-  id: number;
-  src: string;
-  title: string;
-  alt: string;
-}
-const photos: PhotosTabProps[] = [
+import { PhotosEmotionsTabType } from "@/app/types/photosEmotion";
+
+const photos: PhotosEmotionsTabType[] = [
   {
     id: 1,
     src: "/image/emotions/anxiety.jpg",
