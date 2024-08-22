@@ -1,3 +1,4 @@
+// app/blog/route.ts
 import articles from "./data";
 
 export async function GET() {
