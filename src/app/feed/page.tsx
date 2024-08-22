@@ -1,18 +1,8 @@
 // src/app/feed/page
 import Image from "next/image";
 import Link from "next/link";
+import photos from "/public/data/photosEmotionsTab";
 
-interface PhotosTabProps {
-  id: number;
-  src: string;
-  title: string;
-}
-const photos: PhotosTabProps[] = [
-  { id: 1, src: "/image/emotions/anxiety.jpg", title: "Feeling 1" },
-  { id: 2, src: "/image/emotions/ennui.png", title: "Feeling 2" },
-  { id: 3, src: "/image/emotions/envy.jpg", title: "Feeling 3" },
-  { id: 4, src: "/image/emotions/joy.jpg", title: "Feeling 4" },
-];
 const FeedPage = () => {
   const renderPhoto = photos.map((photo) => (
     <Link href={`/feed/${photo.id}`} key={photo.id}>

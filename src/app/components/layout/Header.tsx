@@ -1,6 +1,6 @@
-import Nav from "@/app/components/layout/navBar/Nav";
 import Image from "next/image";
 import Link from "next/link";
+import Nav from "./navBar/Nav";
 import nextJsLogo from "/public/image/nextJs_logo_custom.webp";
 
 export default function Header() {

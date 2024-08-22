@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function FeedLayout({
   children,
-  photo,
   contentA,
   contentB,
+  photo,
 }: {
   children: ReactNode;
   contentA: ReactNode;
@@ -27,8 +27,8 @@ export default function FeedLayout({
     <main>
       {children}
       {contentA}
-      {photo} {/* overlay */}
       {contentB}
+      {photo} {/* overlay */}
     </main>
   );
 }

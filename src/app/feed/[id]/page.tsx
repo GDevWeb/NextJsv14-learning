@@ -1,41 +1,51 @@
 // feed/[id]/page.tsx
 "use client";
-
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
-interface PhotosTabProps {
-  id: number;
-  src: string;
-  title: string;
-}
-const photos: PhotosTabProps[] = [
-  { id: 1, src: "/image/emotions/anxiety.jpg", title: "Feeling 1" },
-  { id: 2, src: "/image/emotions/ennui.png", title: "Feeling 2" },
-  { id: 3, src: "/image/emotions/envy.jpg", title: "Feeling 3" },
-  { id: 4, src: "/image/emotions/joy.jpg", title: "Feeling 4" },
-];
+import { useEffect, useState } from "react";
+import photos from "/public/data/photosEmotionsTab";
 
 const ImageOverlay = ({ params }: { params: { src: string } }) => {
+  const [currentId, setCurrentId] = useState<number | undefined>(undefined);
   const router = useRouter();
   const imageId = parseInt(params.id, 10);
-  const image = photos.find((img) => img.id === imageId);
 
   useEffect(() => {
-    if (!image) {
+    if (imageId && !isNaN(imageId)) {
+      setCurrentId(imageId);
+    } else {
       router.push("/feed");
     }
-  }, [image, router]);
+  }, [imageId, router]);
 
   const closeOverlay = () => {
     router.back();
+  };
+
+  const image = photos.find((img) => img.id === currentId);
+
+  const handlePrevious = () => {
+    setCurrentId((prev) => (prev && prev > 1 ? prev - 1 : photos.length));
+  };
+
+  const handleNext = () => {
+    setCurrentId((prev) => (prev && prev < photos.length ? prev + 1 : 1));
   };
 
   if (!image) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+      <button
+        type="button"
+        id="previous1"
+        onClick={handlePrevious}
+        className="absolute left-5 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-400 focus:outline-none"
+        aria-label="Previous Image"
+      >
+        &#8249; Previous
+      </button>
+
       <div className="relative">
         <Image
           src={image.src}
@@ -47,11 +57,22 @@ const ImageOverlay = ({ params }: { params: { src: string } }) => {
         <button
           type="button"
           onClick={closeOverlay}
-          className="absolute top-3 right-3 text-white text-3xl"
+          className="absolute top-3 right-3 p-2 text-white text-3xl hover:text-gray-400 focus:outline-none bg-red-600 rounded"
+          aria-label="Close"
         >
           &times;
         </button>
       </div>
+
+      <button
+        type="button"
+        id="Next"
+        onClick={handleNext}
+        className="absolute right-5 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-400 focus:outline-none"
+        aria-label="Next Image"
+      >
+        Next &#8250;
+      </button>
     </div>
   );
 };
