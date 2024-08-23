@@ -1,3 +1,4 @@
+// app/blog/[id]
 import { redirect } from "next/navigation";
 import articles from "../data";
 

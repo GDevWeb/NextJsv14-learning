@@ -1,3 +1,4 @@
+// app/blog.route.tsx
 import { NextRequest } from "next/server";
 import articles from "./data";
 
